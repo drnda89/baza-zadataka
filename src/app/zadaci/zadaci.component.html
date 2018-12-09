@@ -1,0 +1,21 @@
+<section>
+	<mat-accordion>
+	  <mat-expansion-panel>
+	    <mat-expansion-panel-header>
+	      <mat-panel-title>
+	       Zadatak
+	      </mat-panel-title>
+	      
+	    </mat-expansion-panel-header>
+		    <mat-form-field>
+		      <input matInput placeholder="Naslov">
+		    </mat-form-field>
+			<br><br>
+		    <mat-form-field>
+	    		<textarea matInput placeholder="Opis zadatka" rows="10"></textarea>
+	  		</mat-form-field>
+		 <button mat-raised-button color="warn" (click) = 'send()'>Kreiraj zadatak</button>
+	  </mat-expansion-panel>
+
+	</mat-accordion>
+</section>
