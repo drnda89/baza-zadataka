@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ZadaciComponent } from './zadaci/zadaci.component';
+
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -13,7 +13,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ListaZadatakaComponent } from './lista-zadataka/lista-zadataka.component';
 import { SharedService } from './shared/shared.service';
 
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { SharedService } from './shared/shared.service';
     MatExpansionModule,
     MatInputModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

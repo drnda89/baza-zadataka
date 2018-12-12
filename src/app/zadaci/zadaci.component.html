@@ -8,13 +8,13 @@
 	      
 	    </mat-expansion-panel-header>
 		    <mat-form-field>
-		      <input matInput placeholder="Naslov">
+		      <input #naslov matInput placeholder="Naslov">
 		    </mat-form-field>
 			<br><br>
 		    <mat-form-field>
-	    		<textarea matInput placeholder="Opis zadatka" rows="10"></textarea>
+	    		<textarea #opis matInput placeholder="Opis zadatka" rows="10"></textarea>
 	  		</mat-form-field>
-		 <button mat-raised-button color="warn" (click) = 'send()'>Kreiraj zadatak</button>
+		 <button mat-raised-button color="warn" (click) = 'send(naslov, opis)'>Kreiraj zadatak</button>
 	  </mat-expansion-panel>
 
 	</mat-accordion>

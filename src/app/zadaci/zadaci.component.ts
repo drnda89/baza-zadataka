@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared/shared.service';
+
 
 @Component({
   selector: 'app-zadaci',
@@ -6,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./zadaci.component.css']
 })
 export class ZadaciComponent implements OnInit {
- 
 
-  constructor() { }
+  constructor(public podaci: SharedService) {
+   }
 
   ngOnInit() {
   }
 
-
+  send(naslov, opis) {
+    this.podaci.data.emit(naslov.value + opis.value);
+  }
 
 }
