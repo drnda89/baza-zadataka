@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../shared/shared.service';
 
-
 @Component({
   selector: 'app-zadaci',
   templateUrl: './zadaci.component.html',
@@ -16,7 +15,7 @@ export class ZadaciComponent implements OnInit {
   }
 
   send(naslov, opis) {
-    this.podaci.data.emit(naslov.value + opis.value);
+    this.podaci.data.emit(naslov.value +' '+ opis.value);
   }
 
 }

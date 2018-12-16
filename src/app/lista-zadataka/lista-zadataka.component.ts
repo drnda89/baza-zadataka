@@ -11,9 +11,10 @@ import { SharedService } from '../shared/shared.service';
 export class ListaZadatakaComponent implements OnInit {
   zadaci: Observable<any>;
   prikaz;
+
   constructor(db: AngularFirestore, podaci: SharedService) {
     this.zadaci = db.collection('zadaci').valueChanges();
-    podaci.data.subscribe(vrednost => this.prikaz = vrednost)
+    podaci.data.subscribe(vrednost => this.prikaz = vrednost);
    }
 
   ngOnInit() {
