@@ -6,15 +6,15 @@
 	       Zadatak
 	      </mat-panel-title>
 	      
-	    </mat-expansion-panel-header>
+			</mat-expansion-panel-header>
 		    <mat-form-field>
-		      <input #naslov matInput placeholder="Naslov">
+		      <input matInput [(ngModel)]= 'model.title' name="title" placeholder="Naslov">
 		    </mat-form-field>
 			<br><br>
 		    <mat-form-field>
-	    		<textarea #opis matInput placeholder="Opis zadatka" rows="10"></textarea>
+	    		<textarea matInput [(ngModel)]= 'model.content' name = content placeholder="Opis zadatka" rows="10"></textarea>
 	  		</mat-form-field>
-		 <button mat-raised-button color="warn" (click) = 'send(naslov, opis)'>Kreiraj zadatak</button>
+		 <button mat-raised-button color="warn" (click) = 'send()'>Kreiraj zadatak</button>
 	  </mat-expansion-panel>
 
 	</mat-accordion>

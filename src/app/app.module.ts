@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ZadaciComponent } from './zadaci/zadaci.component';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -17,6 +18,7 @@ import { SharedService } from './shared/shared.service';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { environment } from 'src/environments/environment';
     MatToolbarModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]
