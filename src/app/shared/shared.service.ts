@@ -5,6 +5,6 @@ import { Injectable,EventEmitter } from '@angular/core';
 })
 export class SharedService {
   data = new EventEmitter();
-
+  
   constructor() { }
 }

@@ -15,6 +15,10 @@ export class ZadaciComponent implements OnInit {
   private itemsCollection: AngularFirestoreCollection<Item>;
   items: Observable<Item[]>;
 
+  timeLeft: number = 0;
+  interval;
+
+
   constructor(public podaci: SharedService, private afs:AngularFirestore) {
     this.itemsCollection = afs.collection<Item>('zadaci');
     this.items = this.itemsCollection.valueChanges();
@@ -22,16 +26,27 @@ export class ZadaciComponent implements OnInit {
       title: '',
       content: '',
       published: new Date,
-      
     }
+    this.podaci.data.emit(this.interval)
    }
 
   ngOnInit() {
+  
+    
+  }
+  
+  brojac() {
+    this.interval = setInterval(() => {
+      this.timeLeft++;
+  },1000)
   }
 
   send() {
     this.podaci.data.emit(this.model.title + ' '+ this.model.content);
     this.itemsCollection.add(this.model);
+    clearInterval(this.interval);
   }
+
+
 
 }

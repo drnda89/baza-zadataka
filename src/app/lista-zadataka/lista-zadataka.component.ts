@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
 import { SharedService } from '../shared/shared.service';
+import { PortalHostDirective } from '@angular/cdk/portal';
+import { platformCoreDynamic } from '@angular/platform-browser-dynamic/src/platform_core_dynamic';
 
 @Component({
   selector: 'app-lista-zadataka',
@@ -18,7 +20,7 @@ export class ListaZadatakaComponent implements OnInit {
    }
 
   ngOnInit() {
-    
+  
   }
 
 

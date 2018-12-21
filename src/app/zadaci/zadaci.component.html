@@ -1,11 +1,10 @@
 <section>
 	<mat-accordion>
-	  <mat-expansion-panel>
-	    <mat-expansion-panel-header>
+		<mat-expansion-panel >
+	    <mat-expansion-panel-header (click) = 'brojac()'>
 	      <mat-panel-title>
-	       Zadatak
+	       Zadatak 
 	      </mat-panel-title>
-	      
 			</mat-expansion-panel-header>
 		    <mat-form-field>
 		      <input matInput [(ngModel)]= 'model.title' name="title" placeholder="Naslov">
@@ -14,8 +13,11 @@
 		    <mat-form-field>
 	    		<textarea matInput [(ngModel)]= 'model.content' name = content placeholder="Opis zadatka" rows="10"></textarea>
 	  		</mat-form-field>
-		 <button mat-raised-button color="warn" (click) = 'send()'>Kreiraj zadatak</button>
+		 <button mat-raised-button color="warn" (click) = 'send()'>Kreiraj zadatak</button> <br><br>
+		 {{'vreme pravljenja zadatka: '+ timeLeft}}
 	  </mat-expansion-panel>
-
+	
 	</mat-accordion>
+
 </section>
+
