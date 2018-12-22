@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  {path:'', component: ListaZadatakaComponent},
   {path:'home', component: ListaZadatakaComponent},
   {path:'zadatak', component: ZadaciComponent}
 ]
