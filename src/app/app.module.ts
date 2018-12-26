@@ -12,6 +12,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatSelectModule} from '@angular/material/select';
+
 import { ListaZadatakaComponent } from './lista-zadataka/lista-zadataka.component';
 import { SharedService } from './shared/shared.service';
 
@@ -42,6 +44,7 @@ const routes: Routes = [
     MatInputModule,
     MatButtonModule,
     MatToolbarModule,
+    MatSelectModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     HttpClientModule,

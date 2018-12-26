@@ -12,7 +12,14 @@
 			<br><br>
 		    <mat-form-field>
 	    		<textarea matInput [(ngModel)]= 'model.content' name = content placeholder="Opis zadatka" rows="10"></textarea>
-	  		</mat-form-field>
+				</mat-form-field>
+				<mat-form-field>
+					<mat-select placeholder="Prioritet" disableRipple>
+						<mat-option value="1">Visok</mat-option>
+						<mat-option value="2">Srednji</mat-option>
+						<mat-option value="3">Nizak</mat-option>
+					</mat-select>
+				</mat-form-field>
 		 <button mat-raised-button color="warn" (click) = 'send()'>Kreiraj zadatak</button> <br><br>
 		 {{'vreme pravljenja zadatka: '+ timeLeft}}
 	  </mat-expansion-panel>

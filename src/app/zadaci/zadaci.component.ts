@@ -25,9 +25,9 @@ export class ZadaciComponent implements OnInit {
     this.model = {
       title: '',
       content: '',
-      published: new Date,
+      published: new Date
     }
-    this.podaci.data.emit(this.interval)
+    this.podaci.data.emit(this.interval);
    }
 
   ngOnInit() {
