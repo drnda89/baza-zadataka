@@ -18,6 +18,10 @@ export class ZadaciComponent implements OnInit {
   timeLeft: number = 0;
   interval;
 
+  kreiranje;
+
+  
+  
 
   constructor(public podaci: SharedService, private afs:AngularFirestore) {
     this.itemsCollection = afs.collection<Item>('zadaci');
@@ -31,8 +35,7 @@ export class ZadaciComponent implements OnInit {
    }
 
   ngOnInit() {
-  
-    
+ 
   }
   
   brojac() {
@@ -41,10 +44,12 @@ export class ZadaciComponent implements OnInit {
   },1000)
   }
 
-  send() {
+  send(inp, txt) {
     this.podaci.data.emit(this.model.title + ' '+ this.model.content);
     this.itemsCollection.add(this.model);
     clearInterval(this.interval);
+    inp.value = '';
+    txt.value = '';
   }
 
 
