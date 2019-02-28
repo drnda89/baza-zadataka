@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import { SharedService } from '../shared/shared.service';
 
 @Component({
@@ -15,10 +15,10 @@ export class ListaZadatakaComponent implements OnInit {
   constructor(db: AngularFirestore, podaci: SharedService) {
     this.zadaci = db.collection('zadaci').valueChanges();
     podaci.data.subscribe(vrednost => this.prikaz = vrednost);
-   }
+  }
 
   ngOnInit() {
-  
+
   }
 
 

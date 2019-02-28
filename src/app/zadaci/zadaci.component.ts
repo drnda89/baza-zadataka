@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { SharedService } from '../shared/shared.service';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
@@ -10,7 +10,7 @@ import { Item } from '../item';
   templateUrl: './zadaci.component.html',
   styleUrls: ['./zadaci.component.css']
 })
-export class ZadaciComponent implements OnInit {
+export class ZadaciComponent implements OnInit,DoCheck {
   model: Item;
   private itemsCollection: AngularFirestoreCollection<Item>;
   items: Observable<Item[]>;
@@ -19,9 +19,6 @@ export class ZadaciComponent implements OnInit {
   interval;
 
   kreiranje;
-
-  
-  
 
   constructor(public podaci: SharedService, private afs:AngularFirestore) {
     this.itemsCollection = afs.collection<Item>('zadaci');
@@ -34,8 +31,18 @@ export class ZadaciComponent implements OnInit {
     this.podaci.data.emit(this.interval);
    }
 
+
   ngOnInit() {
  
+  }
+
+  ngDoCheck(){
+    if(this.model.title === '' || this.model.content === '') {
+      this.kreiranje = true;
+    } else {
+      this.kreiranje = false;
+
+    }
   }
   
   brojac() {
@@ -44,6 +51,7 @@ export class ZadaciComponent implements OnInit {
   },1000)
   }
 
+  
   send(inp, txt) {
     this.podaci.data.emit(this.model.title + ' '+ this.model.content);
     this.itemsCollection.add(this.model);
