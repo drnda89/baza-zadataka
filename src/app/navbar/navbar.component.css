@@ -1,8 +1,14 @@
-span {
-	cursor: pointer;
-	margin-right: 1050px;
+.navbar {
+    justify-content: space-between;
 }
+
+span {
+    cursor: pointer;
+    padding-right: 5px;
+}
+
 span:focus {
     outline: none;
     border: 0;
 }
+

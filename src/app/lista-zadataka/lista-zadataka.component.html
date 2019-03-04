@@ -1,8 +1,6 @@
-
-
-<ul>
-  <li class="text" *ngFor="let zadatak of zadaci | async">
-    {{zadatak.title}} <br> {{zadatak.published.toDate() | date:'medium'}} <br> {{zadatak.content}}
-  </li>
-</ul>
 {{prikaz}}
+  <ul>
+      <li class="text" *ngFor="let zadatak of zadaci | async">
+        {{zadatak.title}} <br> {{zadatak.content}} <br> {{zadatak.published.toDate() | date:'medium'}} 
+      </li>
+    </ul>
