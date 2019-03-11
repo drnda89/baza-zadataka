@@ -1,30 +1,31 @@
 <section>
 	<mat-accordion>
-		<mat-expansion-panel >
-	    <mat-expansion-panel-header (click) = 'brojac()'>
-	      <mat-panel-title>
-	       Zadatak 
-	      </mat-panel-title>
+		<mat-expansion-panel>
+			<mat-expansion-panel-header (click)='brojac()'>
+				<mat-panel-title>
+					Zadatak
+				</mat-panel-title>
 			</mat-expansion-panel-header>
-		    <mat-form-field>
-		      <input #inp matInput [(ngModel)]= 'model.title' name="title" placeholder="Naslov">
-		    </mat-form-field>
+			<mat-form-field>
+				<input #inp matInput [(ngModel)]='model.title' name="title" placeholder="Naslov">
+			</mat-form-field>
 			<br><br>
-		    <mat-form-field>
-	    		<textarea #txt matInput [(ngModel)]= 'model.content' name = content placeholder="Opis zadatka" rows="10"></textarea>
-				</mat-form-field>
-				<mat-form-field>
-					<mat-select placeholder="Prioritet" disableRipple>
-						<mat-option value="1">Visok</mat-option>
-						<mat-option value="2">Srednji</mat-option>
-						<mat-option value="3">Nizak</mat-option>
-					</mat-select>
-				</mat-form-field>
-		 <button mat-raised-button color="warn" (click) = 'send(inp, txt)' [disabled] = 'kreiranje'>Kreiraj zadatak</button> <br><br>
-		 {{'vreme pravljenja zadatka: '+ timeLeft}}
-	  </mat-expansion-panel>
-	
+			<mat-form-field>
+				<textarea #txt matInput [(ngModel)]='model.content' name=content placeholder="Opis zadatka"
+					rows="10"></textarea>
+			</mat-form-field>
+			<mat-form-field>
+				<mat-select placeholder="Prioritet" disableRipple>
+					<mat-option value="1">Visok</mat-option>
+					<mat-option value="2">Srednji</mat-option>
+					<mat-option value="3">Nizak</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<button mat-raised-button color="primary" (click)='send(inp, txt)' [disabled]='kreiranje'>Kreiraj zadatak</button>
+			<br><br>
+			{{'vreme pravljenja zadatka: '+ timeLeft}}
+		</mat-expansion-panel>
+
 	</mat-accordion>
 
 </section>
-

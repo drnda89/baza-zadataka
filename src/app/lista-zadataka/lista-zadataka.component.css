@@ -1,7 +1,4 @@
 .text {
     border: 2px solid black;
-    padding: 20px;
-    list-style-type: none;
-    margin-bottom: 10px;
     border-radius: 20px;
 }
