@@ -25,6 +25,7 @@ export class ZadaciComponent implements OnInit,DoCheck {
     this.items = this.itemsCollection.valueChanges();
     this.model = {
       title: '',
+      category: '',
       content: '',
       published: new Date
     }
@@ -37,7 +38,7 @@ export class ZadaciComponent implements OnInit,DoCheck {
   }
 
   ngDoCheck(){
-    if(this.model.title === '' || this.model.content === '') {
+    if(this.model.title === '' || this.model.content === '' || this.model.category === '') {
       this.kreiranje = true;
     } else {
       this.kreiranje = false;
@@ -52,12 +53,19 @@ export class ZadaciComponent implements OnInit,DoCheck {
   }
 
   
-  send(inp, txt) {
-    this.podaci.data.emit(this.model.title + ' '+ this.model.content);
+  send(inp, txt, cat) {
+    this.podaci.data.emit(this.model.title + ' '+ this.model.content+ ' ' +this.model.category);
     this.itemsCollection.add(this.model);
     clearInterval(this.interval);
     inp.value = '';
     txt.value = '';
+    cat.value = '';
+    this.kreiranje = true;
+  }
+
+  onChange(event) {
+    this.model.category = event.target.value;
+    
   }
 
 

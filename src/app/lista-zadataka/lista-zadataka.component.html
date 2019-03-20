@@ -8,6 +8,6 @@
 <br>
 
 <mat-grid-list cols="3" rowHeight="3:1">
-    <mat-grid-tile class="text" *ngFor="let zadatak of zadaci | async">{{zadatak.title}} <br> {{zadatak.content}} <br> {{zadatak.published.toDate() | date:'medium'}}
+    <mat-grid-tile class="text" *ngFor="let zadatak of zadaci | async">{{zadatak.title}} <br> {{zadatak.category}} <br> {{zadatak.content}} <br> {{zadatak.published.toDate() | date:'medium'}}
     </mat-grid-tile>
 </mat-grid-list>

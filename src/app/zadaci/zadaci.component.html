@@ -9,6 +9,13 @@
 			<mat-form-field>
 				<input #inp matInput [(ngModel)]='model.title' name="title" placeholder="Naslov">
 			</mat-form-field>
+			<mat-form-field>
+				<mat-select #cat [(ngModel)]='model.category' (change) = 'onChange($event)' placeholder="Kategorija" disableRipple>
+					<mat-option value="kategorija 1">kategorija 1</mat-option>
+					<mat-option value="kategorija 2">kategorija 2</mat-option>
+					<mat-option value="kategorija 3">kategorija 3</mat-option>
+				</mat-select>
+			</mat-form-field>
 			<br><br>
 			<mat-form-field>
 				<textarea #txt matInput [(ngModel)]='model.content' name=content placeholder="Opis zadatka"
@@ -21,7 +28,7 @@
 					<mat-option value="3">Nizak</mat-option>
 				</mat-select>
 			</mat-form-field>
-			<button mat-raised-button color="primary" (click)='send(inp, txt)' [disabled]='kreiranje'>Kreiraj zadatak</button>
+			<button mat-raised-button color="primary" (click)='send(inp, txt, cat)' [disabled]='kreiranje'>Kreiraj zadatak</button>
 			<br><br>
 			{{'vreme pravljenja zadatka: '+ timeLeft}}
 		</mat-expansion-panel>
